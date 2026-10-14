@@ -36,9 +36,10 @@ async function openSignIn(page: Page) {
 async function signUpWithEmail(page: Page, name: string, email: string, password = 'thali-secret-1') {
   await openSignIn(page)
   await page.getByRole('button', { name: 'Create an account' }).click()
-  await page.getByLabel('Name').fill(name)
-  await page.getByLabel('Email').fill(email)
-  await page.getByLabel('Password', { exact: true }).fill(password)
+  const dlg = page.getByRole('dialog')
+  await dlg.getByLabel('Name').fill(name)
+  await dlg.getByLabel('Email').fill(email)
+  await dlg.getByLabel('Password', { exact: true }).fill(password)
   await page.getByRole('button', { name: 'Create account' }).click()
   await expect(nav(page).getByRole('button', { name: `Account: ${name}` }).first()).toBeVisible()
 }
@@ -48,7 +49,12 @@ async function providerSignIn(page: Page, provider: 'Google' | 'Facebook' | 'App
   const popupP = page.waitForEvent('popup')
   await page.getByRole('button', { name: `Continue with ${provider}` }).click()
   const popup = await popupP
-  await popup.getByRole('button', { name: /add new account/i }).click()
+  await popup.waitForLoadState('load')
+  // The emulator page wires its buttons up after load; retry until the form opens.
+  await expect(async () => {
+    await popup.getByRole('button', { name: /add new account/i }).click()
+    await expect(popup.locator('#email-input')).toBeVisible({ timeout: 1000 })
+  }).toPass({ timeout: 20_000 })
   await popup.locator('#email-input').fill(email)
   await popup.locator('#display-name-input').fill(name)
   await popup.getByRole('button', { name: /sign in with/i }).click()
@@ -75,7 +81,7 @@ test('offers Google, Facebook, Apple and email', async ({ page }) => {
   await page.getByRole('button', { name: /try with a demo week/i }).click()
   await openSignIn(page)
   for (const p of ['Google', 'Facebook', 'Apple']) await expect(page.getByRole('button', { name: `Continue with ${p}` })).toBeVisible()
-  await expect(page.getByLabel('Email')).toBeVisible()
+  await expect(page.getByRole('dialog').getByLabel('Email')).toBeVisible()
 })
 
 test('creates an account with email and backs the data up', async ({ page }) => {
@@ -111,8 +117,8 @@ test('syncs meals across two devices, including deletions', async ({ browser }) 
   // Laptop: sign in from the welcome screen and see the same lunch.
   const laptop = await fresh(browser)
   await laptop.page.getByRole('button', { name: 'Sign in' }).click()
-  await laptop.page.getByLabel('Email').fill('asha@example.com')
-  await laptop.page.getByLabel('Password', { exact: true }).fill('thali-secret-1')
+  await laptop.page.getByRole('dialog').getByLabel('Email').fill('asha@example.com')
+  await laptop.page.getByRole('dialog').getByLabel('Password', { exact: true }).fill('thali-secret-1')
   await laptop.page.getByRole('dialog').getByRole('button', { name: 'Sign in', exact: true }).click()
   const lunch = laptop.page.locator('.card', { has: laptop.page.getByRole('heading', { name: 'Lunch' }) })
   await expect(lunch).toContainText('Roti / Chapati', { timeout: 20_000 })
@@ -140,8 +146,8 @@ test('explains a wrong password and sends a reset link', async ({ page }) => {
   await nav(page).getByRole('button', { name: 'Account: Kiran' }).first().click()
   await page.getByRole('button', { name: 'Sign out', exact: true }).click()
   await openSignIn(page)
-  await page.getByLabel('Email').fill('kiran@example.com')
-  await page.getByLabel('Password', { exact: true }).fill('not-the-password')
+  await page.getByRole('dialog').getByLabel('Email').fill('kiran@example.com')
+  await page.getByRole('dialog').getByLabel('Password', { exact: true }).fill('not-the-password')
   await page.getByRole('dialog').getByRole('button', { name: 'Sign in', exact: true }).click()
   await expect(page.getByText(/don’t match/)).toBeVisible()
   await page.getByRole('button', { name: 'Forgot password?' }).click()
@@ -161,8 +167,8 @@ test('sign out and clear, then delete the account and its cloud data', async ({ 
 
   // Sign back in: the data comes back from the cloud.
   await page.getByRole('button', { name: 'Sign in' }).click()
-  await page.getByLabel('Email').fill('priya@example.com')
-  await page.getByLabel('Password', { exact: true }).fill('thali-secret-1')
+  await page.getByRole('dialog').getByLabel('Email').fill('priya@example.com')
+  await page.getByRole('dialog').getByLabel('Password', { exact: true }).fill('thali-secret-1')
   await page.getByRole('dialog').getByRole('button', { name: 'Sign in', exact: true }).click()
   await expect(page.getByRole('heading', { name: /priya/i })).toBeVisible({ timeout: 20_000 })
 
