@@ -16,7 +16,7 @@ Links for every form:
 
 - Live app: https://multihacks-unstop26.vercel.app
 - Code: https://github.com/andringodson/Hackathon-MultiHacksUnstop26
-- Demo video (2 min 59 s): https://github.com/andringodson/Hackathon-MultiHacksUnstop26/releases/latest/download/ThaliSense-demo.mp4
+- Demo video (2 min 50 s): https://github.com/andringodson/Hackathon-MultiHacksUnstop26/releases/latest/download/ThaliSense-demo.mp4
 
 Hack-A-Throne asks for a Google Drive link for the video. Upload `ThaliSense-demo.mp4` to Drive, set sharing to *Anyone with the link*, and paste that link.
 

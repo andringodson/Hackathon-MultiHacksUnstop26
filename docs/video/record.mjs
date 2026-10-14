@@ -46,6 +46,8 @@ async function open(record) {
 
 rmSync(`${V}/raw`, { recursive: true, force: true })
 const { ctx, page } = await open(true)
+// Fail fast instead of hanging forever on a missing element.
+page.setDefaultTimeout(20000)
 const t0 = Date.now()
 const marks = {}
 const sleep = (ms) => page.waitForTimeout(ms)

@@ -1,6 +1,6 @@
 # Demo video
 
-`ThaliSense-demo.mp4` (2 min 59 s) is attached to the [v1.1 release](https://github.com/andringodson/Hackathon-MultiHacksUnstop26/releases/latest). It shows typed and whole-thali photo logging, plate scores, the coach agent, the 7-day plan, progress tracking and the vision benchmark. The food photos are Wikimedia Commons images under CC BY-SA; see [the fixture credits](../../tests/e2e/fixtures/README.md).
+`ThaliSense-demo.mp4` (2 min 50 s) is attached to the [latest release](https://github.com/andringodson/Hackathon-MultiHacksUnstop26/releases/latest). It shows typed and whole-thali photo logging, plate scores, the coach agent, the 7-day plan, progress tracking and the vision benchmark. The food photos are Wikimedia Commons images under CC BY-SA; see [the fixture credits](../../tests/e2e/fixtures/README.md).
 
 How it is made, so it can be re-recorded after UI changes:
 
