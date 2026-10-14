@@ -4,7 +4,7 @@
 
 Type “2 roti, dal, bhindi” or snap your thali. ThaliSense works out what you ate, scores your diabetes risk with Indian-specific science, and an explainable agent plans a week of regional meals that fit your body, your diet and your budget. Nothing leaves your phone.
 
-**Live app: [thalisense.vercel.app](https://thalisense.vercel.app)** (press *Try with a demo week*; installable, works offline) · **[Demo video](https://github.com/andringodson/ThaliSense/releases/latest)**
+**Live app: [multihacks-unstop26.vercel.app](https://multihacks-unstop26.vercel.app)** (press *Try with a demo week*; installable, works offline) · **[Demo video](https://github.com/andringodson/Hackathon-MultiHacksUnstop26/releases/latest)**
 
 ![ThaliSense coach: agent trace and week chart](docs/screenshots/coach.png)
 

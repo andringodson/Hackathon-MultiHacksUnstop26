@@ -1,7 +1,7 @@
 import { chromium } from 'playwright'
 import { readFileSync, writeFileSync, readdirSync, rmSync } from 'node:fs'
 
-const BASE = 'https://thalisense.vercel.app'
+const BASE = 'https://multihacks-unstop26.vercel.app'
 const V = '../video2'
 const FX = '../ts/tests/e2e/fixtures'
 const dur = JSON.parse(readFileSync(`${V}/durations.json`, 'utf8'))

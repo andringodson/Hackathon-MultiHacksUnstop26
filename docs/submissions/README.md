@@ -14,9 +14,9 @@ ThaliSense is entered in four Unstop hackathons. Each one fits a named theme.
 
 Links for every form:
 
-- Live app: https://thalisense.vercel.app
-- Code: https://github.com/andringodson/ThaliSense
-- Demo video (2 min 59 s): https://github.com/andringodson/ThaliSense/releases/download/v1.1/ThaliSense-demo.mp4
+- Live app: https://multihacks-unstop26.vercel.app
+- Code: https://github.com/andringodson/Hackathon-MultiHacksUnstop26
+- Demo video (2 min 59 s): https://github.com/andringodson/Hackathon-MultiHacksUnstop26/releases/latest/download/ThaliSense-demo.mp4
 
 Hack-A-Throne asks for a Google Drive link for the video. Upload `ThaliSense-demo.mp4` to Drive, set sharing to *Anyone with the link*, and paste that link.
 

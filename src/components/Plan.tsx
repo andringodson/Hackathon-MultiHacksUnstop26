@@ -14,7 +14,7 @@ function planText(report: CoachReport): string {
     for (const m of d.meals) lines.push(`${TITLE[m.meal]}: ${m.items.map((i) => `${qtyLabel(i.qty)} ${i.food.name}`).join(', ')}`)
     lines.push('')
   }
-  lines.push('Made with https://thalisense.vercel.app')
+  lines.push('Made with https://multihacks-unstop26.vercel.app')
   return lines.join('\n')
 }
 

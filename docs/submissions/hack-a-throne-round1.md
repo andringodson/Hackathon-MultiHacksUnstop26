@@ -36,12 +36,12 @@ ThaliSense turns the food people already love into a personal, explainable plan 
 
 The Today screen lets users log meals by typing or by photo and shows calories, protein, fibre, carbs and fat against personal targets, with coach-picked ideas for the next meal that fit what is left of the day. The Coach screen runs an agent with eight visible tool steps (assess_profile, review_logs, detect_patterns, suggest_swaps, plan_week, verify_plan, check_budget, set_nudges); the user watches it reason, then sees its insights, swaps with measured weekly impact, and habits such as a 10-minute walk after meals. The Plan screen shows a 7-day regional menu with daily totals, cost against budget and notes on what the coach adjusted; one tap logs a planned meal. The Health screen holds the profile, weight and waist trends, and a transparent breakdown of the risk scores.
 
-A working MVP is already live at https://thalisense.vercel.app with a one-click demo week. We benchmarked four vision models on 1,694 labelled photos from three public datasets, chose MobileCLIP-S2 and fine-tuned it with few-shot adaptation: 87.8% top-1 and 95.0% top-3, up from 71.5% and 86.8% for standard CLIP. Scanning five plate regions doubles the dishes found on a thali. The user confirms from a shortlist, so a wrong guess costs one tap. Because all computation runs on the user's device, running costs stay near zero at any scale, and the same app could support ASHA workers screening villages offline.
+A working MVP is already live at https://multihacks-unstop26.vercel.app with a one-click demo week. We benchmarked four vision models on 1,694 labelled photos from three public datasets, chose MobileCLIP-S2 and fine-tuned it with few-shot adaptation: 87.8% top-1 and 95.0% top-3, up from 71.5% and 86.8% for standard CLIP. Scanning five plate regions doubles the dishes found on a thali. The user confirms from a shortlist, so a wrong guess costs one tap. Because all computation runs on the user's device, running costs stay near zero at any scale, and the same app could support ASHA workers screening villages offline.
 
 ThaliSense is a wellness guide, not a medical device. It does not diagnose anything.
 
-Live: https://thalisense.vercel.app
-Code: https://github.com/andringodson/ThaliSense
+Live: https://multihacks-unstop26.vercel.app
+Code: https://github.com/andringodson/Hackathon-MultiHacksUnstop26
 
 ---
 
@@ -53,6 +53,6 @@ React 19, TypeScript, Vite; Transformers.js on ONNX Runtime Web (WebGPU or multi
 
 ## Round 2 (21–23 Oct, if shortlisted)
 
-- GitHub repository: https://github.com/andringodson/ThaliSense
-- Live project: https://thalisense.vercel.app
-- Demo video: upload [ThaliSense-demo.mp4](https://github.com/andringodson/ThaliSense/releases/download/v1.1/ThaliSense-demo.mp4) to Google Drive (sharing: anyone with the link) and paste that link
+- GitHub repository: https://github.com/andringodson/Hackathon-MultiHacksUnstop26
+- Live project: https://multihacks-unstop26.vercel.app
+- Demo video: upload [ThaliSense-demo.mp4](https://github.com/andringodson/Hackathon-MultiHacksUnstop26/releases/latest/download/ThaliSense-demo.mp4) to Google Drive (sharing: anyone with the link) and paste that link

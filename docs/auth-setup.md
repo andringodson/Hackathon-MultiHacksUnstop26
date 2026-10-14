@@ -19,16 +19,16 @@ Allow about 20 minutes. Steps 1–5 are in web consoles and need your own Google
 - **Facebook**: you need an App ID and secret from Meta:
   1. [developers.facebook.com/apps](https://developers.facebook.com/apps) → **Create app** → *Authenticate and request data from users with Facebook Login*.
   2. **App settings → Basic**: copy the **App ID** and **App secret** into Firebase. Set:
-     - Privacy policy URL: `https://thalisense.vercel.app/privacy.html`
-     - User data deletion → instructions URL: `https://thalisense.vercel.app/privacy.html#delete`
-     - App domains: `thalisense.vercel.app`
+     - Privacy policy URL: `https://multihacks-unstop26.vercel.app/privacy.html`
+     - User data deletion → instructions URL: `https://multihacks-unstop26.vercel.app/privacy.html#delete`
+     - App domains: `multihacks-unstop26.vercel.app`
   3. **Facebook Login → Settings → Valid OAuth redirect URIs**: paste the redirect URI Firebase shows on the Facebook provider screen. It looks like `https://<project-id>.firebaseapp.com/__/auth/handler`.
   4. Switch the app from **Development** to **Live** so anyone can sign in. `email` and `public_profile` need no app review.
 - **Apple**: leave this for later (see the last section).
 
 ## 3. Authorise the website
 
-**Authentication → Settings → Authorized domains → Add domain** → `thalisense.vercel.app`.
+**Authentication → Settings → Authorized domains → Add domain** → `multihacks-unstop26.vercel.app`, and also `thalisense.vercel.app` (the old address, which serves the same app).
 
 ## 4. Create the database
 
