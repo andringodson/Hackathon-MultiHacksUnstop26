@@ -245,7 +245,7 @@ button:disabled { cursor: not-allowed; opacity: 0.5; }
 .row-3 { grid-template-columns: repeat(3, 1fr); }
 .field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .field-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
-.field input, .field select { padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); width: 100%; }
+.field input, .field select { font-size: 16px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); width: 100%; }
 .field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
 .idrs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .idrs li { display: grid; grid-template-columns: 130px 1fr 28px; align-items: center; gap: 10px; font-size: 0.9rem; }
