@@ -16,7 +16,7 @@ export function LogBar({ meal, onMeal, onAdd, onSnap }: {
   const [text, setText] = useState('')
   const parsed = useMemo(() => parseMeal(text), [text])
   const kcal = parsed.items.reduce((s, i) => s + FOOD_BY_ID[i.foodId].kcal * i.qty, 0)
-  const example = useMemo(() => EXAMPLES[Math.floor(Math.random() * EXAMPLES.length)], [])
+  const [example] = useState(() => EXAMPLES[Math.floor(Math.random() * EXAMPLES.length)])
 
   const submit = () => {
     if (!parsed.items.length) return

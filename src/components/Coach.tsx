@@ -48,24 +48,19 @@ function WeekChart({ logs, target }: { logs: LogEntry[]; target: number }) {
 
 export function Coach({ report, logs, onRun, onOpenPlan }: { report: CoachReport | null; logs: LogEntry[]; onRun: () => void; onOpenPlan: () => void }) {
   const [shown, setShown] = useState(report ? report.trace.length : 0)
-  const [running, setRunning] = useState(false)
   const timer = useRef<number | undefined>(undefined)
 
   // Reveal trace steps one at a time so the reasoning can be followed.
+  const running = !!report && shown < report.trace.length
   useEffect(() => {
-    if (!running || !report) return
-    if (shown >= report.trace.length) {
-      setRunning(false)
-      return
-    }
+    if (!running) return
     timer.current = window.setTimeout(() => setShown((s) => s + 1), 420)
     return () => window.clearTimeout(timer.current)
-  }, [running, shown, report])
+  }, [running, shown])
 
   const start = () => {
     onRun()
     setShown(0)
-    setRunning(true)
   }
 
   const done = report && shown >= report.trace.length
